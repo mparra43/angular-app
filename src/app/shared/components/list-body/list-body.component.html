@@ -1,0 +1,36 @@
+<div class="list-body">
+    <ul class="list-table-header">
+        <li (click)="changeSort('name')">Nombre ❤</li>
+        <li (click)="changeSort('album')">álbum 🆗</li>
+        <li>fecha incorporación 🍌😁</li>
+        <li><i class="uil uil-clock-eight"></i></li>
+    </ul>
+    <ul class="play-list-rows" *ngFor="let film of films |orderList:optionSort.property:optionSort.order">
+        <li class="track-name">
+            <ng-container *ngTemplateOutlet="coverSection;context:{film:film}"></ng-container>
+        </li>
+        <li class="track-name-opacity">
+            {{film.title}}
+        </li>
+        <li class="track-name-opacity">
+            {{film.title}}
+        </li>
+        <li class="track-name-opacity">
+            {{film.title}}
+        </li>
+
+    </ul>
+</div>
+
+<!--template del cover-->
+<ng-template #coverSection let-film="film">
+
+    <div class="cover-section">
+        <img appImgBroken class="cover-film" [src]="film.poster_path" [alt]="film.title">
+        <div class="cover-info">
+            <div class="name-film">{{film.title}}</div>
+            <div class="name-film-details">{{film.title}}</div>
+        </div>
+    </div>
+
+</ng-template>

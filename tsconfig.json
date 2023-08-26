@@ -21,7 +21,8 @@
     "module": "ES2022",
     "paths": {
       "@modules/*":["src/app/modules/*"],
-      "@shared/*":["src/app/shared/*"]
+      "@shared/*":["src/app/shared/*"],
+      "@core/*":["src/app/core/*"],
     },
     "useDefineForClassFields": false,
     "lib": [

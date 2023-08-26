@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
 export class SideBarComponent implements OnInit {
   mainMenu: {
     defaultOptions: Array<any>, accessLink: Array<any>
-  } = { defaultOptions: [], accessLink: [] };
-  customOptions: Array<any> = [];
+  } = { defaultOptions: [], accessLink: [] }
 
+  customOptions: Array<any> = []
 
   constructor(private router: Router) { }
 
@@ -28,42 +28,36 @@ export class SideBarComponent implements OnInit {
         router: ['/', 'history']
       },
       {
-        name: 'Tu biblioteca',
-        icon: 'uil uil-chart',
+        name: 'Favoritos',
+        icon: 'uil-heart-medical',
         router: ['/', 'favorites'],
-        query: { hola: 'mundo' }
+       
       }
     ]
 
     this.mainMenu.accessLink = [
       {
-        name: 'Crear lista',
+        name: 'Peliculas ',
         icon: 'uil-plus-square'
       },
       {
-        name: 'Favoritas ',
+        name: 'Series',
         icon: 'uil-heart-medical'
       }
     ]
 
-    this.customOptions = [
-      {
-        name: 'Mi lista º1',
-        router: ['/']
-      },
-      {
-        name: 'Mi lista º2',
-        router: ['/']
-      },
-      {
-        name: 'Mi lista º3',
-        router: ['/']
-      },
-      {
-        name: 'Mi lista º4',
-        router: ['/']
-      }
-    ]
+    
 
+  }
+
+  goTo($event: any): void {
+    this.router.navigate(['/', 'favorites'], {
+      queryParams: {
+        key1: 'value1',
+        key2: 'value2',
+        key3: 'value3'
+      }
+    })
+    console.log($event)
   }
 }

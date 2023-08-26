@@ -1,0 +1,84 @@
+.card-film {
+    background-color: var(--color-2);
+    height: 5rem;
+    border-radius: var(--border-radius-1);
+    display: flex;
+    cursor: pointer;
+    transition: all ease var(--animation-1);
+    justify-content: space-between;
+}
+
+.card-film:hover {
+    background-color: #4d4d4d;
+}
+
+.card-film .cover {
+    width: 5rem;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: var(--border-radius-1);
+    border-bottom-left-radius: var(--border-radius-1);
+}
+
+.card-film .content-film {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding: 0 0 0 .75rem;
+}
+
+.card-film .buttons-film {
+    opacity: 0;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    transition: all ease var(--animation-1);
+}
+
+.card-film:hover .buttons-film {
+    opacity: 1;
+}
+
+.card-film .buttons-film .play-btn {
+    color: var(--color-4);
+    border: 0;
+    font-size: 1.15rem;
+    border-radius: 2rem;
+    background-color: var(--color-1);
+    width: 45px;
+    height: 45px;
+}
+
+.card-film.film-big {
+    position: relative;
+    flex-direction: column;
+    height: 18rem;
+    padding: 1rem;
+}
+
+.card-film.film-big .cover {
+    width: 100%;
+    height: 200px;
+    border-radius: var(--border-radius-1);
+}
+
+.card-film.film-big .content-film {
+    padding: .5rem 0;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.card-film.film-big .content-film .sub-title-track {
+    font-size: 80%;
+    opacity: .7;
+}
+
+.card-film.film-big .buttons-film {
+    position: absolute;
+    right: 0;
+    top: 13rem
+}
