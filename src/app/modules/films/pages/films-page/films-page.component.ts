@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FilmService } from '@modules/films/services/film.service';
 
 @Component({
   selector: 'app-films-page',
@@ -410,6 +411,29 @@ export class FilmsPageComponent {
       "vote_count": 102
     }
   ]
-  tracksRandom: Array<any> = []
+  series: Array<any> = []
   listObservers$: Array<any> = []
+
+  constructor(private filmService: FilmService) { }
+
+  ngOnInit(): void {
+    this.loadDataAll() //TODO 📌📌
+    
+  }
+
+  async loadDataAll(): Promise<any> {
+    try {
+      const { results } = await this.filmService.getAllFilms$().toPromise()
+      const series = await this.filmService.getAllSeries$().toPromise()
+      if (results && Array.isArray(results)) {
+        this.upcomingMovies = results;
+        this.series = series.results;
+      }
+    } catch (error) {
+      console.error('Error loading data:', error);
+    }
+
+
+  }
+
 }

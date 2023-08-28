@@ -1,22 +1,22 @@
 <div class="list-body">
     <ul class="list-table-header">
-        <li (click)="changeSort('name')">Nombre ❤</li>
-        <li (click)="changeSort('album')">álbum 🆗</li>
-        <li>fecha incorporación 🍌😁</li>
-        <li><i class="uil uil-clock-eight"></i></li>
+        <li (click)="changeSort('title')">Nombre</li>
+        <li (click)="changeSort('popularity')">Popularidad</li>
+        <li>Votos</li>
+        <li>Fecha de lanzamiento</li>
     </ul>
-    <ul class="play-list-rows" *ngFor="let film of films |orderList:optionSort.property:optionSort.order">
-        <li class="track-name">
+    <ul class="list-rows" *ngFor="let film of films |orderList:optionSort.property:optionSort.order">
+        <li class="film-name">
             <ng-container *ngTemplateOutlet="coverSection;context:{film:film}"></ng-container>
         </li>
-        <li class="track-name-opacity">
-            {{film.title}}
+        <li class="film-name-opacity">
+            {{film.popularity}}
         </li>
-        <li class="track-name-opacity">
-            {{film.title}}
+        <li class="film-name-opacity">
+            {{film.vote_average}}
         </li>
-        <li class="track-name-opacity">
-            {{film.title}}
+        <li class="film-name-opacity">
+            {{film.release_date}}
         </li>
 
     </ul>
@@ -26,10 +26,10 @@
 <ng-template #coverSection let-film="film">
 
     <div class="cover-section">
-        <img appImgBroken class="cover-film" [src]="film.poster_path" [alt]="film.title">
+        <img appImgBroken class="cover-film" [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + film.poster_path" [alt]="film.title">
         <div class="cover-info">
             <div class="name-film">{{film.title}}</div>
-            <div class="name-film-details">{{film.title}}</div>
+            <div class="name-film-details"></div>
         </div>
     </div>
 

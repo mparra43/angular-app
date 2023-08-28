@@ -12,7 +12,7 @@
 }
 
 .section--generic__films--zone .films--list.card-small {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .section--generic__films--zone .films--list.card-big {

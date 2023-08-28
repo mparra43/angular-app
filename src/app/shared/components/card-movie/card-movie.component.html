@@ -1,5 +1,5 @@
 <div *ngIf="mode==='small'" class="card-film film-small">
-    <img [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + film.poster_path" [alt]="film.title" class="cover">
+    <img appImgBroken [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + film.poster_path" [alt]="film.title" class="cover">
     <div class="content-film">
         <span *ngIf="film.title">{{ film.title }}</span>
         <span *ngIf="!film.title">{{ film.name }}</span>

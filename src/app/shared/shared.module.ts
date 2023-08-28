@@ -9,6 +9,7 @@ import { ListHeaderComponent } from './components/list-header/list-header.compon
 import { ListBodyComponent } from './components/list-body/list-body.component';
 import { RouterModule } from '@angular/router';
 import { OrderListPipe } from './pipe/order-list.pipe';
+import { ImgBrokenDirective } from './directives/img-broken.directive';
 
 
 
@@ -21,7 +22,8 @@ import { OrderListPipe } from './pipe/order-list.pipe';
     SectionGenericComponent,
     ListHeaderComponent,
     ListBodyComponent,
-    OrderListPipe
+    OrderListPipe,
+    ImgBrokenDirective
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { OrderListPipe } from './pipe/order-list.pipe';
     ListHeaderComponent,
     ListBodyComponent,
     OrderListPipe,
+    ImgBrokenDirective
   ]
 })
 export class SharedModule { }
