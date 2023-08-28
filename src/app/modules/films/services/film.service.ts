@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { Observable } from 'rxjs';
+import { ResponseModel } from '@core/models/Response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,4 +26,20 @@ export class FilmService {
   }
 
 
+  searchFilms$(term: string): Observable<any> {
+    const params = {
+      query: term,
+    };
+    
+    return this.http.get(`${this.URL}/search/movie`, {headers: this.headers, params})
+  }
+
+
+  searchSeries$(term: string): Observable<any> {
+    const params = {
+      query: term,
+    };
+    
+    return this.http.get(`${this.URL}/search/tv`, {headers: this.headers, params})
+  }
 }

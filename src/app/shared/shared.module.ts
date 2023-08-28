@@ -10,6 +10,8 @@ import { ListBodyComponent } from './components/list-body/list-body.component';
 import { RouterModule } from '@angular/router';
 import { OrderListPipe } from './pipe/order-list.pipe';
 import { ImgBrokenDirective } from './directives/img-broken.directive';
+import { SearchComponent } from './components/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,11 +25,15 @@ import { ImgBrokenDirective } from './directives/img-broken.directive';
     ListHeaderComponent,
     ListBodyComponent,
     OrderListPipe,
-    ImgBrokenDirective
+    ImgBrokenDirective,
+    SearchComponent
+
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
+    
   ],
   exports:[
     SideBarComponent,
@@ -38,7 +44,8 @@ import { ImgBrokenDirective } from './directives/img-broken.directive';
     ListHeaderComponent,
     ListBodyComponent,
     OrderListPipe,
-    ImgBrokenDirective
+    ImgBrokenDirective,
+    SearchComponent
   ]
 })
 export class SharedModule { }

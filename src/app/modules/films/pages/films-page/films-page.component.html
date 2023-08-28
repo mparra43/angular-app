@@ -1,8 +1,9 @@
 <div class="films-page">
+    <app-search (callbackData)="receiveData($event)"></app-search>
     <!--section top (small)-->
    <app-section-generic [data]="upcomingMovies" [mode]="'small'" [title]="'Películas en cartelera'">
     </app-section-generic>
     <!--section medium (big)-->
-    <app-section-generic [data]="series" [mode]="'big'" [title]="'Pelícu las en cartelera'">
+    <app-section-generic [data]="series" [mode]="'big'" [title]="'Series populares'">
     </app-section-generic>
 </div>

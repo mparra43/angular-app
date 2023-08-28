@@ -5,10 +5,10 @@
         <span *ngIf="!film.title">{{ film.name }}</span>
     </div>
     <div class="buttons-film">
-        <button *ngIf="true" class="play-btn">
+        <button *ngIf="true" class="play-btn" [routerLink]="['/films', film.id]">
             <i class="uil " [ngClass]="{'uil-play':true}"></i>
         </button>
-        <button *ngIf="false" class="play-btn">
+        <button *ngIf="false" class="play-btn" [routerLink]="['/films', film.id]">
             <i class="uil uil-play"></i>
         </button>
     </div>
@@ -24,10 +24,10 @@
         <div class="sub-title-film">{{film.name}}</div>
     </div>
     <div class="buttons-film">
-        <button  *ngIf="true" class="play-btn">
+        <button  *ngIf="true" class="play-btn" [routerLink]="['/films', film.id]">
             <i class="uil " [ngClass]="{'uil-play':true}"></i>
         </button>
-        <button *ngIf="false" class="play-btn">
+        <button *ngIf="false" class="play-btn"  [routerLink]="['/films', film.id]">
             <i class="uil uil-play"></i>
         </button>
     </div>
