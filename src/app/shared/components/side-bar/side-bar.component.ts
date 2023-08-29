@@ -24,9 +24,8 @@ export class SideBarComponent implements OnInit {
       },
       {
         name: 'Favoritos',
-        icon: 'uil-heart-medical',
+        icon: 'uil uil-heart',
         router: ['/', 'favorites'],
-       
       }
     ]
 

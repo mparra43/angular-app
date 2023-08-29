@@ -55,3 +55,8 @@
     opacity: .7;
     padding-left: .5rem;
 }
+
+.image {
+    max-width: 100%;
+    height: 100%; 
+  }

@@ -1,5 +1,28 @@
 <div class="favorites-page">
-    <app-list-header [title]="'Barbie'"></app-list-header>
-    
-</div>
+    <!-- <app-dialog text="Se ha agregado un nuevo favorito !!!"></app-dialog> -->
+    <app-list-header [title]="filmDetails.title" [img]="filmDetails.poster_path"></app-list-header>
+    <div class="movie-details">
+        <button (click)="toggleRatingForm()" class="rate-button">Calificar</button>
+        <div *ngIf="showRatingForm" class="rating-form">
+            <app-rating-form (callbackData)="rateFile($event)"></app-rating-form>
+        </div>
 
+        <div>
+            <div class="container-button">
+                <button class="bottom" matTooltip="Este es el texto del tooltip" matTooltipPosition="below">
+                    <i class="uil-heart-medical"></i>
+                </button>
+            </div>
+
+            <div class="relative-info">
+                <div>
+                    <h2>Titulo original: {{filmDetails.original_title}}</h2>
+                    <h4>{{filmDetails.status}}</h4>
+                    <h5>Fecha de lanzamiento: {{filmDetails.release_date}}</h5>
+                </div>
+                <h4>Calificación {{filmDetails.vote_average}}</h4>
+            </div>
+            <p>{{filmDetails.overview}}</p>
+        </div>
+    </div>
+</div>

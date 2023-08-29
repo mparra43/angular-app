@@ -10,6 +10,7 @@ export class ListHeaderComponent {
   @Input() subTitle: string = ''
   @Input() count: string = ''
   @Input() icon: string = ''
+  @Input() img: string = ''
   constructor() { }
 
   ngOnInit(): void {

@@ -12,6 +12,8 @@ import { OrderListPipe } from './pipe/order-list.pipe';
 import { ImgBrokenDirective } from './directives/img-broken.directive';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
+import { RatingFormComponent } from './components/rating-form/rating-form.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 
@@ -26,7 +28,9 @@ import { FormsModule } from '@angular/forms';
     ListBodyComponent,
     OrderListPipe,
     ImgBrokenDirective,
-    SearchComponent
+    SearchComponent,
+    RatingFormComponent,
+    DialogComponent
 
   ],
   imports: [
@@ -45,7 +49,9 @@ import { FormsModule } from '@angular/forms';
     ListBodyComponent,
     OrderListPipe,
     ImgBrokenDirective,
-    SearchComponent
+    SearchComponent,  
+    RatingFormComponent,
+    DialogComponent
   ]
 })
 export class SharedModule { }

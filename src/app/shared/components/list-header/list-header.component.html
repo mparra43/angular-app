@@ -1,7 +1,12 @@
 <div class="list-header">
     <div class="cover">
         <div class="cover-mock">
-            <i [ngClass]="'uil'+ icon"></i>
+            <ng-container *ngIf="icon; else image">
+                <i [ngClass]="'uil ' + icon"></i>
+            </ng-container>
+            <ng-template #image>
+                <img class="image" [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + img" alt="{{ img }}">
+            </ng-template>
         </div>
     </div>
     <div class="content-text">

@@ -18,20 +18,24 @@ export class FilmService {
   constructor(private http: HttpClient) { }
 
   getAllFilms$(): Observable<any> {
-    return this.http.get(`${this.URL}/movie/upcoming?language=en-US&page=1`, {headers: this.headers})   
+    return this.http.get(`${this.URL}/movie/upcoming?language=en-US&page=1`, { headers: this.headers })
   }
 
   getAllSeries$(): Observable<any> {
-    return this.http.get(`${this.URL}/tv/popular?language=en-US&page=1`, {headers: this.headers})   
+    return this.http.get(`${this.URL}/tv/popular?language=en-US&page=1`, { headers: this.headers })
   }
 
+
+  getFilmDetails$(id: string): Observable<any> {
+    return this.http.get(`${this.URL}/movie/${id}`, { headers: this.headers })
+  }
 
   searchFilms$(term: string): Observable<any> {
     const params = {
       query: term,
     };
-    
-    return this.http.get(`${this.URL}/search/movie`, {headers: this.headers, params})
+
+    return this.http.get(`${this.URL}/search/movie`, { headers: this.headers, params })
   }
 
 
@@ -39,7 +43,15 @@ export class FilmService {
     const params = {
       query: term,
     };
-    
-    return this.http.get(`${this.URL}/search/tv`, {headers: this.headers, params})
+    return this.http.get(`${this.URL}/search/tv`, { headers: this.headers, params })
+  }
+
+
+  addRatingMovie$(id: string, qualification: number): Observable<any> {
+    const params = {
+      guest_session_id: '',
+      session_id: ''
+    };
+    return this.http.post(`${this.URL}/movie/${id}`, { headers: this.headers, params, body: { value: qualification } })
   }
 }
