@@ -1,0 +1,15 @@
+
+<div class="confirm-dialog">
+    <div class="confirm-content">
+        <form (ngSubmit)="submitForm()" class="form-comment">
+            <div class="comment" class="form-group">
+                <label class="label-comment" for="comment">Agregar una anotación </label>
+                <textarea class="comment-textarea" id="comment" name="comment" [(ngModel)]="comment"
+                    rows="4"></textarea>
+            </div>
+            <div class="container-buttom">
+                <button class="form-button " type="submit">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -9,9 +9,5 @@
             <i class="uil uil-star" [class.selected]="selectedRating >= 10" (click)="setSelectedRating(10)"></i>
         </div>
     </div>
-    <div class="comment" class="form-group">
-        <label class="label-comment" for="comment">Déjanos un comentario:</label>
-        <textarea class="comment-textarea" id="comment" name="comment" [(ngModel)]="comment" rows="4"></textarea>
-    </div>
     <button class="form-button " type="submit">Enviar</button>
 </form>

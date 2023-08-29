@@ -1,5 +1,5 @@
 <div class="favorites-page">
-    <!-- <app-dialog text="Se ha agregado un nuevo favorito !!!"></app-dialog> -->
+    <app-dialog *ngIf="showConfirmation" text={{text}}></app-dialog>
     <app-list-header [title]="filmDetails.title" [img]="filmDetails.poster_path"></app-list-header>
     <div class="movie-details">
         <button (click)="toggleRatingForm()" class="rate-button">Calificar</button>
@@ -9,7 +9,7 @@
 
         <div>
             <div class="container-button">
-                <button class="bottom" matTooltip="Este es el texto del tooltip" matTooltipPosition="below">
+                <button (click)="addMovieFavorite()" class="bottom" matTooltip="Este es el texto del tooltip" matTooltipPosition="below">
                     <i class="uil-heart-medical"></i>
                 </button>
             </div>

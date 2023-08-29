@@ -14,6 +14,7 @@ import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { RatingFormComponent } from './components/rating-form/rating-form.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { NoteFormComponent } from './components/note-form/note-form.component';
 
 
 
@@ -30,7 +31,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ImgBrokenDirective,
     SearchComponent,
     RatingFormComponent,
-    DialogComponent
+    DialogComponent,
+    NoteFormComponent
 
   ],
   imports: [
@@ -51,7 +53,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ImgBrokenDirective,
     SearchComponent,  
     RatingFormComponent,
-    DialogComponent
+    DialogComponent, 
+    NoteFormComponent 
   ]
 })
 export class SharedModule { }

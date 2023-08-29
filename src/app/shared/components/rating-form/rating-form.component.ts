@@ -6,8 +6,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./rating-form.component.css']
 })
 export class RatingFormComponent {
+
   @Output() callbackData: EventEmitter<any> = new EventEmitter()
-  comment: string = '';
   selectedRating: number = 0;
 
   setSelectedRating(rating: number): void {
@@ -16,7 +16,7 @@ export class RatingFormComponent {
 
   submitForm(): void {
     if (this.selectedRating !== null) {
-      this.callbackData.emit({ rating: this.selectedRating, comment: this.comment })
+      this.callbackData.emit(this.selectedRating)
     } else {
       console.log('Por favor, selecciona una calificación.');
     }

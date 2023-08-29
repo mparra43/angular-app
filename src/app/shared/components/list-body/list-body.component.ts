@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FilmModel } from '@core/models/Films.model';
 
 @Component({
@@ -8,6 +8,7 @@ import { FilmModel } from '@core/models/Films.model';
 })
 export class ListBodyComponent {
   @Input() films: FilmModel[] = []
+  @Output() callbackShow: EventEmitter<any> = new EventEmitter()
   optionSort: { property: string | null, order: string } = { property: null, order: 'asc' }
   constructor() { }
 
@@ -22,4 +23,8 @@ export class ListBodyComponent {
       order: order === 'asc' ? 'desc' : 'asc'
     }
   }
+  openNoteForm(): void{
+    this.callbackShow.emit();
+  }
+  
 }

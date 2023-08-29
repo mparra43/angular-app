@@ -3,7 +3,7 @@
         <li (click)="changeSort('title')">Nombre</li>
         <li (click)="changeSort('popularity')">Popularidad</li>
         <li>Votos</li>
-        <li>Fecha de lanzamiento</li>
+        <li></li>
     </ul>
     <ul class="list-rows" *ngFor="let film of films |orderList:optionSort.property:optionSort.order">
         <li class="film-name">
@@ -15,8 +15,8 @@
         <li class="film-name-opacity">
             {{film.vote_average}}
         </li>
-        <li class="film-name-opacity">
-            {{film.release_date}}
+        <li class="film-name-opacity" (click)="openNoteForm()">
+            <i class="uil uil-comment-alt-edit"> Comentar</i>
         </li>
 
     </ul>
@@ -26,7 +26,8 @@
 <ng-template #coverSection let-film="film">
 
     <div class="cover-section">
-        <img appImgBroken class="cover-film" [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + film.poster_path" [alt]="film.title">
+        <img appImgBroken class="cover-film"
+            [src]="'https://www.themoviedb.org/t/p/w220_and_h330_face' + film.poster_path" [alt]="film.title">
         <div class="cover-info">
             <div class="name-film">{{film.title}}</div>
             <div class="name-film-details"></div>

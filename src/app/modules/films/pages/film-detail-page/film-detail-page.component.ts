@@ -10,10 +10,11 @@ import { FilmService } from '@modules/films/services/film.service';
   styleUrls: ['./film-detail-page.component.css']
 })
 export class FilmDetailPageComponent implements OnInit {
-  text = 'Este es el texto del tooltip';
+  text = 'Se ha agregado un nuevo favorito !!!';
   film: string = '';
   filmDetails: any = {};
   showRatingForm = false;
+  showConfirmation = false;
   comment: string = '';
   rating: number | null = null;
 
@@ -22,7 +23,6 @@ export class FilmDetailPageComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.film = params['id'];
-      console.log(this.film)
       this.loadFilmDetails(this.film);
     });
   }
@@ -33,6 +33,15 @@ export class FilmDetailPageComponent implements OnInit {
     } catch (error) {
     }
   }
+
+
+  toggleShowConfirmation(): void {
+    this.showConfirmation = !this.showConfirmation;
+    setTimeout(() => {
+      this.showConfirmation = !this.showConfirmation;
+    }, 1000);
+  }
+
   toggleRatingForm(): void {
     this.showRatingForm = !this.showRatingForm;
   }
@@ -40,9 +49,23 @@ export class FilmDetailPageComponent implements OnInit {
   setRating(rating: number): void {
     this.rating = rating;
   }
-  rateFile(data: any): void {
-    console.log(data);
+  async rateFile(qualification: number): Promise<any> {
+    this.text = "se ha calificado exitosamente  la películas"
+    try {
+      await this.filmService.addRatingMovie$(this.film, qualification,)?.toPromise();
+      this.toggleShowConfirmation()
+    } catch (error) {
+    
+    }
     this.toggleRatingForm()
   }
- 
+
+  async addMovieFavorite(): Promise<any> {
+    try {
+      const {success}= await this.filmService.addMovieFavorite$(this.film)?.toPromise();
+      success && this.toggleShowConfirmation();
+    } catch (error) {
+      // this.toggleShowConfirmation()
+    }
+  }
 }

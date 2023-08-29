@@ -1,4 +1,5 @@
 <div class="favorites-page">
-    <app-list-header [title]="'Tus favoritos'"></app-list-header>
-    <app-list-body [films]="favoriteMovies"></app-list-body>
+    <app-list-header [title]="'Tus favoritos'" icon="uil-heart"></app-list-header>
+    <app-list-body [films]="favoriteMovies" (callbackShow)="toggleNotesForm()"></app-list-body>
+    <app-note-form *ngIf="showNotesForm" (callbackData)="saveNotes()" ></app-note-form>
 </div>
