@@ -9,6 +9,7 @@ import { FilmService } from '@modules/films/services/film.service';
 export class FavoritePageComponent {
   showNotesForm = false;
   favoriteMovies: Array<any> = []
+  filmId: number| null = null;
 
 
   constructor(private filmService: FilmService) { }
@@ -16,13 +17,22 @@ export class FavoritePageComponent {
   ngOnInit(): void {
     this.loadDataAll();
   }
-  
-  toggleNotesForm(): void {
+
+  toggleNotesForm(film:number | null): void {
+    this.filmId = film;
     this.showNotesForm = !this.showNotesForm;
   }
 
-  async saveNotes() {
-    this.toggleNotesForm()
+  async saveNotes(comment:string){
+    try {
+      if (typeof this.filmId === "number"){
+        const { results } = await this.filmService.addCommentMovie$(this.filmId, comment).toPromise();
+        console.log(results);
+        this.toggleNotesForm(null)
+      }
+    } catch (error) {
+      console.error('Error loading data:', error);
+    }
   }
 
   async loadDataAll(): Promise<any> {

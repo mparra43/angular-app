@@ -15,7 +15,7 @@
         <li class="film-name-opacity">
             {{film.vote_average}}
         </li>
-        <li class="film-name-opacity" (click)="openNoteForm()">
+        <li class="film-name-opacity" (click)="openNoteForm(film.id)">
             <i class="uil uil-comment-alt-edit"> Comentar</i>
         </li>
 

@@ -7,24 +7,21 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { CookieService } from 'ngx-cookie-service';
+
 
 @Injectable()
 export class InjectHeadersInterceptor implements HttpInterceptor {
 
-  
-  constructor(private cookieService: CookieService) { }
+
+  constructor() { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     try {
-      const token = this.cookieService.get('token')
       let newRequest = request
       newRequest = request.clone(
         {
           setHeaders: {
             authorization: `Bearer ${environment.token}`,
-            
-            
           }
         }
       )

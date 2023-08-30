@@ -23,8 +23,8 @@ export class ListBodyComponent {
       order: order === 'asc' ? 'desc' : 'asc'
     }
   }
-  openNoteForm(): void{
-    this.callbackShow.emit();
+  openNoteForm(id:number): void{
+    this.callbackShow.emit(id);
   }
   
 }
