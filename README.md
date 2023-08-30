@@ -1,4 +1,10 @@
 # AngularApp
+La aplicación cuenta con un sistema de autenticación integrado a partir de un boilerplate https://github.com/mparra43/boilerplate-express-api, mediante el cual los usuarios pueden registrarse utilizando su dirección de correo electrónico, contraseña, session_id y guest_session_id. Una vez que un usuario ha completado el proceso de autenticación a través de la API de themoviedb.org, se habilita su acceso a la sección correspondiente.
+
+Para asegurar un funcionamiento adecuado, es esencial incorporar en los archivos de entorno los ajustes necesarios. En particular, en el campo 'apiUser', se debe incluir la URL de la API que se encarga tanto de la autenticación de la aplicación como de la gestión de los marcadores relacionados con las películas.
+
+Por otro lado, el conjunto de campos 'userApi', 'account' y 'token' corresponde a los elementos suministrados por la API de themoviedb.org. Estos campos son vitales para el consumo adecuado de los diversos servicios ofrecidos por dicha API, permitiendo así una interacción fluida y eficiente con sus recursos.
+
 
 
 ![image](https://github.com/mparra43/angular-app/assets/66500440/d1f5cef0-ffe9-44f7-8292-345257cd2992)
