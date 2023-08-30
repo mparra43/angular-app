@@ -6,21 +6,40 @@ Para asegurar un funcionamiento adecuado, es esencial incorporar en los archivos
 Por otro lado, el conjunto de campos 'userApi', 'account' y 'token' corresponde a los elementos suministrados por la API de themoviedb.org. Estos campos son vitales para el consumo adecuado de los diversos servicios ofrecidos por dicha API, permitiendo así una interacción fluida y eficiente con sus recursos.
 
 
+#uso 
+Primero, genere las variables de sesión session_id y guest_session_id a través de themoviedb.org. Luego, utilice el servicio POST {{base url boilerplate}}/api/v1/users/ para crear un usuario en la aplicación.
+
+Una vez creado el usuario, proceda a autenticarse en la aplicación utilizando la dirección de correo electrónico y la contraseña proporcionadas durante el proceso de creación.
+
+#Login
 
 ![image](https://github.com/mparra43/angular-app/assets/66500440/d1f5cef0-ffe9-44f7-8292-345257cd2992)
 
+#Home
+
 ![image](https://github.com/mparra43/angular-app/assets/66500440/24172e1b-aa3f-43c0-9546-6d5d0d1de2bc)
 
+#Busqueda Home 
+
 ![image](https://github.com/mparra43/angular-app/assets/66500440/93423595-8078-4245-9e0d-2e2a9a4829a2)
+
+#Series 
 ![image](https://github.com/mparra43/angular-app/assets/66500440/364512ab-e9d6-417b-85ad-045793a7f981)
+
+#Detalle película 
 
 ![image](https://github.com/mparra43/angular-app/assets/66500440/e37c47c4-7a77-4009-932e-424245c7a54f)
 
-![image](https://github.com/mparra43/angular-app/assets/66500440/0fd72f42-b031-4277-8c39-94e2ca6909aa)
-![image](https://github.com/mparra43/angular-app/assets/66500440/83233c09-f8fa-4c55-bc2f-56abb30a67fc)
-![image](https://github.com/mparra43/angular-app/assets/66500440/5fea612d-ebeb-4a61-a32f-f1f39d31f3a1)
 
+# Calificación 
+![image](https://github.com/mparra43/angular-app/assets/66500440/0fd72f42-b031-4277-8c39-94e2ca6909aa)
+
+![image](https://github.com/mparra43/angular-app/assets/66500440/83233c09-f8fa-4c55-bc2f-56abb30a67fc)
+
+#Favoritos 
 ![image](https://github.com/mparra43/angular-app/assets/66500440/e61f1c88-98c3-4c5c-a7b7-774f3dffc85b)
+
+#Notas sobre las película favoritAS
 
 ![image](https://github.com/mparra43/angular-app/assets/66500440/d97e24cc-788b-4970-b3dd-4cb3863caa0d)
 
