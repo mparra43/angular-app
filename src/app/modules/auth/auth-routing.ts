@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
-const routes: Routes = [
+export const authRoutes: Routes = [
   {
     path: 'register',
     component: RegisterPageComponent
@@ -17,8 +16,4 @@ const routes: Routes = [
     redirectTo: '/auth/login'
   }
 ];
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class AuthRoutingModule { }
+
