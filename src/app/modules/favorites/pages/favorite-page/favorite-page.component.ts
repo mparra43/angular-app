@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 import { FilmService } from '@modules/films/services/film.service';
+import { NoteFormComponent } from '../../../../shared/components/note-form/note-form.component';
+import { NgIf } from '@angular/common';
+import { ListBodyComponent } from '../../../../shared/components/list-body/list-body.component';
+import { ListHeaderComponent } from '../../../../shared/components/list-header/list-header.component';
 
 @Component({
-  selector: 'app-favorite-page',
-  templateUrl: './favorite-page.component.html',
-  styleUrls: ['./favorite-page.component.css']
+    selector: 'app-favorite-page',
+    templateUrl: './favorite-page.component.html',
+    styleUrls: ['./favorite-page.component.css'],
+    standalone: true,
+    imports: [ListHeaderComponent, ListBodyComponent, NgIf, NoteFormComponent]
 })
 export class FavoritePageComponent {
   showNotesForm = false;

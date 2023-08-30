@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { FilmModel } from '@core/models/Films.model';
 
 @Pipe({
-  name: 'orderList'
+    name: 'orderList',
+    standalone: true
 })
 export class OrderListPipe implements PipeTransform {
 

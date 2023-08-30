@@ -8,14 +8,12 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 
 
 @NgModule({
-  declarations: [
-    LoginPageComponent,
-    RegisterPageComponent
-  ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        ReactiveFormsModule,
+        LoginPageComponent,
+        RegisterPageComponent
+    ]
 })
 export class AuthModule { }

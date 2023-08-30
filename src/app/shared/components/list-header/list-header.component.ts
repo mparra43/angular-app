@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { NgIf, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-list-header',
-  templateUrl: './list-header.component.html',
-  styleUrls: ['./list-header.component.css']
+    selector: 'app-list-header',
+    templateUrl: './list-header.component.html',
+    styleUrls: ['./list-header.component.css'],
+    standalone: true,
+    imports: [NgIf, NgClass]
 })
 export class ListHeaderComponent {
   @Input() title: string = ''

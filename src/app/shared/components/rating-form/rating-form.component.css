@@ -6,6 +6,7 @@
   
   .rating-form label {
     margin-top: 10px;
+    margin-left: 2rem;
   }
   
   .rating-form textarea {

@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import { FilmModel} from '@core/models/Films.model';
+import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from '../../../../shared/components/footer/footer.component';
+import { SideBarComponent } from '../../../../shared/components/side-bar/side-bar.component';
 
 
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+    selector: 'app-home-page',
+    templateUrl: './home-page.component.html',
+    styleUrls: ['./home-page.component.css'],
+    standalone: true,
+    imports: [SideBarComponent, FooterComponent, RouterOutlet]
 })
 export class HomePageComponent {
 

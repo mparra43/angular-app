@@ -1,10 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FilmModel } from '@core/models/Films.model';
+import { OrderListPipe } from '../../pipe/order-list.pipe';
+import { ImgBrokenDirective } from '../../directives/img-broken.directive';
+import { NgFor, NgTemplateOutlet } from '@angular/common';
 
 @Component({
-  selector: 'app-list-body',
-  templateUrl: './list-body.component.html',
-  styleUrls: ['./list-body.component.css']
+    selector: 'app-list-body',
+    templateUrl: './list-body.component.html',
+    styleUrls: ['./list-body.component.css'],
+    standalone: true,
+    imports: [NgFor, NgTemplateOutlet, ImgBrokenDirective, OrderListPipe]
 })
 export class ListBodyComponent {
   @Input() films: FilmModel[] = []

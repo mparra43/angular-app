@@ -8,8 +8,8 @@ describe('ListHeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ListHeaderComponent]
-    });
+    imports: [ListHeaderComponent]
+});
     fixture = TestBed.createComponent(ListHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

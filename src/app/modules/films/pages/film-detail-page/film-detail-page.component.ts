@@ -2,12 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FilmModel } from '@core/models/Films.model';
 import { FilmService } from '@modules/films/services/film.service';
+import { RatingFormComponent } from '../../../../shared/components/rating-form/rating-form.component';
+import { ListHeaderComponent } from '../../../../shared/components/list-header/list-header.component';
+import { DialogComponent } from '../../../../shared/components/dialog/dialog.component';
+import { NgIf } from '@angular/common';
 
 
 @Component({
-  selector: 'app-film-detail-page',
-  templateUrl: './film-detail-page.component.html',
-  styleUrls: ['./film-detail-page.component.css']
+    selector: 'app-film-detail-page',
+    templateUrl: './film-detail-page.component.html',
+    styleUrls: ['./film-detail-page.component.css'],
+    standalone: true,
+    imports: [NgIf, DialogComponent, ListHeaderComponent, RatingFormComponent]
 })
 export class FilmDetailPageComponent implements OnInit {
   text = 'Se ha agregado un nuevo favorito !!!';

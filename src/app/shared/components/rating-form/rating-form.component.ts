@@ -1,9 +1,12 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-rating-form',
-  templateUrl: './rating-form.component.html',
-  styleUrls: ['./rating-form.component.css']
+    selector: 'app-rating-form',
+    templateUrl: './rating-form.component.html',
+    styleUrls: ['./rating-form.component.css'],
+    standalone: true,
+    imports: [ReactiveFormsModule, FormsModule]
 })
 export class RatingFormComponent {
 

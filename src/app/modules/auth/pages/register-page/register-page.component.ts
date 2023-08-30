@@ -1,10 +1,12 @@
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'; 
 @Component({
-  selector: 'app-register-page',
-  templateUrl: './register-page.component.html',
-  styleUrls: ['./register-page.component.css']
+    selector: 'app-register-page',
+    templateUrl: './register-page.component.html',
+    styleUrls: ['./register-page.component.css'],
+    standalone: true,
+    imports: [ReactiveFormsModule]
 })
 export class RegisterPageComponent {
   errorSession: boolean = false

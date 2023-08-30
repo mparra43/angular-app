@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { FilmService } from '@modules/films/services/film.service';
+import { SectionGenericComponent } from '../../../../shared/components/section-generic/section-generic.component';
+import { SearchComponent } from '../../../../shared/components/search/search.component';
 
 @Component({
-  selector: 'app-films-page',
-  templateUrl: './films-page.component.html',
-  styleUrls: ['./films-page.component.css']
+    selector: 'app-films-page',
+    templateUrl: './films-page.component.html',
+    styleUrls: ['./films-page.component.css'],
+    standalone: true,
+    imports: [SearchComponent, SectionGenericComponent]
 })
 export class FilmsPageComponent {
   upcomingMovies: Array<any> = [];

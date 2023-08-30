@@ -8,8 +8,8 @@ describe('NoteFormComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NoteFormComponent]
-    });
+    imports: [NoteFormComponent]
+});
     fixture = TestBed.createComponent(NoteFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

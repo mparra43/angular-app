@@ -1,14 +1,19 @@
 import { Component, Input } from '@angular/core';
 import { FilmModel } from '@core/models/Films.model';
+import { RouterLink } from '@angular/router';
+import { ImgBrokenDirective } from '../../directives/img-broken.directive';
+import { NgIf, NgClass } from '@angular/common';
 
 
 
 
 
 @Component({
-  selector: 'app-card-movie',
-  templateUrl: './card-movie.component.html',
-  styleUrls: ['./card-movie.component.css']
+    selector: 'app-card-movie',
+    templateUrl: './card-movie.component.html',
+    styleUrls: ['./card-movie.component.css'],
+    standalone: true,
+    imports: [NgIf, ImgBrokenDirective, RouterLink, NgClass]
 })
 export class CardMovieComponent {
   @Input() mode: 'small' | 'big' = 'small'
