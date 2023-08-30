@@ -48,9 +48,6 @@ export class LoginPageComponent implements OnInit {
       },
         err => {
           this.errorSession = true
-          console.log('⚠⚠⚠⚠Ocurrio error con tu email o password');
         })
-
   }
-
 }

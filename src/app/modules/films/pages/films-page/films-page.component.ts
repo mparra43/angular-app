@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FilmService } from '@modules/films/services/film.service';
-import { SectionGenericComponent } from '../../../../shared/components/section-generic/section-generic.component';
-import { SearchComponent } from '../../../../shared/components/search/search.component';
+import { SectionGenericComponent } from '@shared/components/section-generic/section-generic.component';
+import { SearchComponent } from '@shared/components/search/search.component';
 
 @Component({
     selector: 'app-films-page',

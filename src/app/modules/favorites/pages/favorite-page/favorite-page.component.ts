@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FilmService } from '@modules/films/services/film.service';
-import { NoteFormComponent } from '../../../../shared/components/note-form/note-form.component';
+import { NoteFormComponent } from '@shared/components/note-form/note-form.component';
 import { NgIf } from '@angular/common';
-import { ListBodyComponent } from '../../../../shared/components/list-body/list-body.component';
-import { ListHeaderComponent } from '../../../../shared/components/list-header/list-header.component';
+import { ListBodyComponent } from '@shared/components/list-body/list-body.component';
+import { ListHeaderComponent } from '@shared/components/list-header/list-header.component';
 
 @Component({
     selector: 'app-favorite-page',

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FilmModel } from '@core/models/Films.model';
 import { FilmService } from '@modules/films/services/film.service';
-import { RatingFormComponent } from '../../../../shared/components/rating-form/rating-form.component';
-import { ListHeaderComponent } from '../../../../shared/components/list-header/list-header.component';
-import { DialogComponent } from '../../../../shared/components/dialog/dialog.component';
+import { RatingFormComponent } from '@shared/components/rating-form/rating-form.component';
+import { ListHeaderComponent } from '@shared/components/list-header/list-header.component';
+import { DialogComponent } from '@shared/components/dialog/dialog.component';
 import { NgIf } from '@angular/common';
-
 
 @Component({
     selector: 'app-film-detail-page',
@@ -71,7 +69,6 @@ export class FilmDetailPageComponent implements OnInit {
       const {success}= await this.filmService.addMovieFavorite$(this.film)?.toPromise();
       success && this.toggleShowConfirmation();
     } catch (error) {
-      // this.toggleShowConfirmation()
     }
   }
 }

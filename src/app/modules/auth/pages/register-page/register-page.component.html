@@ -1,9 +1,10 @@
 <div class="login-auth-page">
     <div class="login-auth-wrapper">
+        <h2>Crea una cuenta </h2>
         <div class="separator"></div>
         <form (ngSubmit)="sendLogin()" [formGroup]="formLogin" class="login-auth-form">
             <div class="form-group">
-                <label for="email">Nombre de usuario</label>
+                <label for="email">Dirección de correo</label>
                 <input formControlName="email" type="text" placeholder="Dirección de correo o nombre de usuario" class="form-input">
             </div>
             <div class="form-group">

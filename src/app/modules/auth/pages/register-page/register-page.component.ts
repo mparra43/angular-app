@@ -1,18 +1,19 @@
 import { UntypedFormControl, UntypedFormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
+import { AuthService } from '@modules/auth/services/auth.service';
 @Component({
-    selector: 'app-register-page',
-    templateUrl: './register-page.component.html',
-    styleUrls: ['./register-page.component.css'],
-    standalone: true,
-    imports: [ReactiveFormsModule]
+  selector: 'app-register-page',
+  templateUrl: './register-page.component.html',
+  styleUrls: ['./register-page.component.css'],
+  standalone: true,
+  imports: [ReactiveFormsModule]
 })
 export class RegisterPageComponent {
   errorSession: boolean = false
   formLogin: UntypedFormGroup = new UntypedFormGroup({});
 
-  constructor( private router: Router) { }
+  constructor(private router: Router, private authService: AuthService,) { }
 
   ngOnInit(): void {
     this.formLogin = new UntypedFormGroup(
@@ -31,21 +32,9 @@ export class RegisterPageComponent {
     )
   }
 
-  sendLogin(): void {
+  async sendLogin() {
     const { email, password } = this.formLogin.value
-    // this.authService.sendCredentials(email, password)
-
-  //     .subscribe(responseOk => { //TODO: Cuando el usuario credenciales Correctas ✔✔
-  //       console.log('Session iniciada correcta', responseOk);
-  //       const { tokenSession, data } = responseOk
-  //       this.cookie.set('token', tokenSession, 4, '/') //TODO:📌📌📌📌
-  //       this.router.navigate(['/', 'tracks'])
-  //     },
-  //       err => {//TODO error 400>=
-  //         this.errorSession = true
-  //         console.log('⚠⚠⚠⚠Ocurrio error con tu email o password');
-  //       })
-
-}
-
+    const response = await this.authService.createAccount(email, password);
+    this.router.navigate(['/', 'login'])
+  }
 }

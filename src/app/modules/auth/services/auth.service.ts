@@ -1,6 +1,5 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-// import { LocalStorageService } from 'angular-local-storage';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -8,12 +7,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
-  private sessionId = ''
-  private guestSessionId = ''
-  private requestToken = ''
   private readonly URL = environment.api
   private readonly URL_AUTH = environment.apiUser
-  
 
   constructor(private http: HttpClient, ) { }
 
@@ -32,22 +27,17 @@ export class AuthService {
     return this.http.get(`${this.URL}/authentication/token/new` );
   }
 
-  createSession(): Observable<any> {
-    return this.http.post(`${this.URL}/authentication/session/new`, {  body: { request_token: this.requestToken }});
+  createSession(requestToken: string): Observable<any> {
+    return this.http.post(`${this.URL}/authentication/session/new`, {  body: { request_token: requestToken }});
   }
 
-  grantPermission(): Observable<any> {
-    return this.http.get(`${this.URL}/authenticate/${this.requestToken}/allow` );
-  }
+
 
   async createAccount(email: string, password: string) {
     const { guest_session_id } = await this.createGuestSession().toPromise();
-    this.guestSessionId = guest_session_id;
-    const { request_token } = await this.createRequestToken().toPromise()
-    this.requestToken = request_token
-    await this.grantPermission().toPromise()
-    const { session_id } = await this.createSession().toPromise()
-    this.sessionId = session_id
+    const { request_token } = await this.createRequestToken().toPromise();
+    const { session_id } = await this.createSession(request_token).toPromise()
+    return this.http.post(`${this.URL_AUTH }/users/`, { email, password, session_id, guest_session_id });
   }
 
 }
